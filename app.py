@@ -27,6 +27,8 @@ clip_model, preprocess = clip.load("ViT-L/14", device=device)
 
 n_inputs = 5
 
+torch.cuda.empty_cache()
+
 @functools.lru_cache()
 def get_url_im(t):
     user_agent = {'User-agent': 'gradio-app'}
