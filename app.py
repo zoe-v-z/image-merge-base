@@ -185,6 +185,15 @@ _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](htt
     inps.extend([cfg_scale,n_samples,seed, steps,])
     submit.click(fn=run, inputs=inps, outputs=[output])
 
+    ex = gr.Examples([[
+        "Image", "Image", "Text/URL", "Nothing", "Nothing",
+        None,None,"central symmetric figure detailed artwork",None,None,
+        "gainsborough.jpeg","blonder.jpeg",None,None,None,
+        1,1.35,1.4,1,1,
+        3.0, 1, 0, 30,
+    ]],
+    inputs=inps, outputs=[output])
+
     gr.Markdown(
 """
 
