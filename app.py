@@ -141,7 +141,7 @@ _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](htt
 
 ### __Provide one or more images to be mixed together by a fine-tuned Stable Diffusion model.__
 
-![banner-large.jpeg](https://s3.amazonaws.com/moonup/production/uploads/1673968679262-62bd5f951e22ec84279820e8.jpeg)
+![banner-large.jpeg](https://s3.amazonaws.com/moonup/production/uploads/1674038658679-62bd5f951e22ec84279820e8.jpeg)
 
 """)
 
@@ -172,13 +172,13 @@ _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](htt
                 strengths.append(strength)
     with gr.Row():
         cfg_scale = gr.Slider(label="CFG scale", value=3, minimum=1, maximum=10, step=0.5)
-        n_samples = gr.Slider(label="Num samples", value=2, minimum=1, maximum=4, step=1)
+        n_samples = gr.Slider(label="Num samples", value=2, minimum=1, maximum=2, step=1)
         seed = gr.Slider(label="Seed", value=0, minimum=0, maximum=10000, step=1)
         steps = gr.Slider(label="Steps", value=30, minimum=10, maximum=100, step=5)
 
     with gr.Row():
         submit = gr.Button("Generate")
-    output = gr.Gallery().style(grid=[1,2,2,2,4,4], height="640px")
+    output = gr.Gallery().style(grid=[1,2], height="640px")
 
     inps = list(chain(btns, txts, ims, strengths))
     inps.extend([cfg_scale,n_samples,seed, steps,])
