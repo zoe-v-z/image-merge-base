@@ -130,7 +130,7 @@ def change_visible(txt1, im1, val):
     return outputs
 
 
-with gr.Blocks(title="Image Mixer") as demo:
+with gr.Blocks(title="Image Mixer", css=".gr-box {border-color: #8136e2}") as demo:
 
     gr.Markdown("")
     gr.Markdown(
@@ -141,7 +141,7 @@ _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](htt
 
 ### __Provide one or more images to be mixed together by a fine-tuned Stable Diffusion model.__
 
-![banner-large.jpeg](https://s3.amazonaws.com/moonup/production/uploads/1674038658679-62bd5f951e22ec84279820e8.jpeg)
+![banner-large.jpeg](https://s3.amazonaws.com/moonup/production/uploads/1674039767068-62bd5f951e22ec84279820e8.jpeg)
 
 """)
 
@@ -152,24 +152,25 @@ _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](htt
 
     with gr.Row():
         for i in range(n_inputs):
-            with gr.Column():
-                btn1 = gr.Radio(
-                    choices=["Image", "Text/URL", "Nothing"],
-                    label=f"Input {i} type",
-                    interactive=True,
-                    value="Nothing",
-                    )
-                txt1 = gr.Textbox(label="Text or Image URL", visible=False, interactive=True)
-                im1 = gr.Image(label="Image", interactive=True, visible=False, type="pil")
-                strength = gr.Slider(label="Strength", minimum=0, maximum=5, step=0.05, value=1, interactive=True)
-
-                fn = partial(change_visible, txt1, im1)
-                btn1.change(fn=fn, inputs=[btn1], outputs=[txt1, im1])
-
-                btns.append(btn1)
-                txts.append(txt1)
-                ims.append(im1)
-                strengths.append(strength)
+            with gr.Box():
+                with gr.Column():
+                    btn1 = gr.Radio(
+                        choices=["Image", "Text/URL", "Nothing"],
+                        label=f"Input {i} type",
+                        interactive=True,
+                        value="Nothing",
+                        )
+                    txt1 = gr.Textbox(label="Text or Image URL", visible=False, interactive=True)
+                    im1 = gr.Image(label="Image", interactive=True, visible=False, type="pil")
+                    strength = gr.Slider(label="Strength", minimum=0, maximum=5, step=0.05, value=1, interactive=True)
+    
+                    fn = partial(change_visible, txt1, im1)
+                    btn1.change(fn=fn, inputs=[btn1], outputs=[txt1, im1])
+    
+                    btns.append(btn1)
+                    txts.append(txt1)
+                    ims.append(im1)
+                    strengths.append(strength)
     with gr.Row():
         cfg_scale = gr.Slider(label="CFG scale", value=3, minimum=1, maximum=10, step=0.5)
         n_samples = gr.Slider(label="Num samples", value=2, minimum=1, maximum=2, step=1)
