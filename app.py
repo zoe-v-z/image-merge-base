@@ -194,7 +194,7 @@ To skip the queue you can <a href="https://huggingface.co/spaces/lambdalabs/imag
         1,1.35,1.4,1,1,
         3.0, 1, 0, 30,
     ]],
-    inputs=inps, outputs=[output])
+    inputs=inps, outputs=[output], cache_examples=True)
 
     gr.Markdown(
 """
