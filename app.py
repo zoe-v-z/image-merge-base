@@ -139,7 +139,7 @@ with gr.Blocks(title="Image Mixer", css=".gr-box {border-color: #8136e2}") as de
 
 _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](https://lambdalabs.com/)_
 
-### __Provide one or more images to be mixed together by a fine-tuned Stable Diffusion model.__
+### __Provide one or more images to be mixed together by a fine-tuned Stable Diffusion model (see tips and advice below👇).__
 
 ![banner-large.jpeg](https://s3.amazonaws.com/moonup/production/uploads/1674039767068-62bd5f951e22ec84279820e8.jpeg)
 
@@ -202,6 +202,7 @@ _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](htt
 - You can provide between 1 and 5 inputs, these can either be an uploaded image a text prompt or a url to an image file.
 - The order of the inputs shouldn't matter, any images will be centre cropped before use.
 - Each input has an individual strength parameter which controls how big an influence it has on the output.
+- The model was not trained using text and can not interpret complex text prompts.
 - Using only text prompts doesn't work well, make sure there is at least one image or URL to an image.
 - The parameters on the bottom row such as cfg scale do the same as for a normal Stable Diffusion model.
 - Balancing the different inputs requires tweaking of the strengths, I suggest getting the right balance for a small number of samples and with few steps until you're
