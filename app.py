@@ -165,7 +165,7 @@ _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](htt
                     strength = gr.Slider(label="Strength", minimum=0, maximum=5, step=0.05, value=1, interactive=True)
     
                     fn = partial(change_visible, txt1, im1)
-                    btn1.change(fn=fn, inputs=[btn1], outputs=[txt1, im1])
+                    btn1.change(fn=fn, inputs=[btn1], outputs=[txt1, im1], queue=False)
     
                     btns.append(btn1)
                     txts.append(txt1)
