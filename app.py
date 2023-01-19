@@ -226,6 +226,7 @@ To skip the queue you can <a href="https://huggingface.co/spaces/lambdalabs/imag
 - Balancing the different inputs requires tweaking of the strengths, I suggest getting the right balance for a small number of samples and with few steps until you're
 happy with the result then increase the steps for better quality.
 - Outputs are 640x640 by default.
+- If you want to run locally see the instruction on the [Model Card](https://huggingface.co/lambdalabs/image-mixer).
 
 ## How does this work?
 
