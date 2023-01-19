@@ -1,6 +1,6 @@
 ---
 title: Image Mixer Demo
-emoji: 💻
+emoji: 🌀
 colorFrom: purple
 colorTo: purple
 sdk: gradio
