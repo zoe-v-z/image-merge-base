@@ -190,27 +190,27 @@ To skip the queue you can <a href="https://huggingface.co/spaces/lambdalabs/imag
     ex = gr.Examples([
     [
         "Image", "Image", "Text/URL", "Nothing", "Nothing",
-        None,None,"central symmetric figure detailed artwork",None,None,
-        "gainsborough.jpeg","blonder.jpeg",None,None,None,
+        "","","central symmetric figure detailed artwork","","",
+        "gainsborough.jpeg","blonder.jpeg","blonder.jpeg","blonder.jpeg","blonder.jpeg",
         1,1.35,1.4,1,1,
         3.0, 1, 0, 30,
     ],
     [
         "Image", "Image", "Text/URL", "Image", "Nothing",
-        None,None,"flowers",None,None,
-        "ex2-1.jpeg","ex2-2.jpeg",None,"ex2-3.jpeg",None,
+        "","","flowers","","",
+        "ex2-1.jpeg","ex2-2.jpeg","blonder.jpeg","ex2-3.jpeg","blonder.jpeg",
         1,1,1.5,1.25,1,
         3.0, 1, 0, 30,
     ],
     [
         "Image", "Image", "Image", "Nothing", "Nothing",
-        None,None,None,None,None,
-        "ex1-1.jpeg","ex1-2.jpeg","ex1-3.jpeg",None,None,
+        "","","","","",
+        "ex1-1.jpeg","ex1-2.jpeg","ex1-3.jpeg","blonder.jpeg","blonder.jpeg",
         1.1,1,1.4,1,1,
         3.0, 1, 0, 30,
     ],
                      ],
-    inputs=inps, outputs=[output], cache_examples=False)
+    fn=run, inputs=inps, outputs=[output], cache_examples=True)
 
     gr.Markdown(
 """
