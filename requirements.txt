@@ -24,3 +24,6 @@ datasets[vision]==2.4.0
 -e git+https://github.com/justinpinkney/nomi.git@e9ded23b7e2269cc64d39683e1bf3c0319f552ab#egg=nomi
 -e git+https://github.com/justinpinkney/stable-diffusion.git@8789746c05cf8ed4755ddb6aa33abdfdaa6908fa#egg=latent-diffusion
 gradio==3.5
+fastapi==0.88.0
+httpx==0.23.1
+starlette==0.22.0
