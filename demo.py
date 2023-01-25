@@ -7,6 +7,7 @@ from torch import autocast
 from contextlib import nullcontext
 import requests
 import functools
+from ray.serve.gradio_integrations import GradioServer
 
 from ldm.models.diffusion.ddim import DDIMSampler
 from ldm.models.diffusion.plms import PLMSSampler
@@ -239,4 +240,8 @@ The model was trained on a subset of LAION Improved Aesthetics at a resolution o
 
 """)
 
-demo.launch()
+# without rayserve
+# demo.launch()
+
+# With rayserve
+app = GradioServer.options(num_replicas=torch.cuda.device_count(), ray_actor_options={"num_gpus" : 1.0}).bind(demo)
