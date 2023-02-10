@@ -1,3 +1,4 @@
+import os
 from io import BytesIO
 import torch
 import numpy as np
@@ -246,4 +247,4 @@ The model was trained on a subset of LAION Improved Aesthetics at a resolution o
 # demo.launch()
 
 # With rayserve
-app = GradioServer.options(num_replicas=3, ray_actor_options={"num_gpus" : 1.0, "num_cpus": 16.0}).bind(demo)
+app = GradioServer.options(num_replicas=os.getenv('DEMO_NUM_REPLICAS'), ray_actor_options={"num_gpus" : 1.0, "num_cpus": 16.0}).bind(demo)
