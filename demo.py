@@ -110,6 +110,8 @@ def run(*args):
 
     ims = sample(sampler, model, conds, 0*conds, scale, start_code, ddim_steps=steps)
     # return make_row(ims)
+
+    torch.cuda.empty_cache()
     return ims
 
 
@@ -176,9 +178,9 @@ _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](htt
                     strengths.append(strength)
     with gr.Row():
         cfg_scale = gr.Slider(label="CFG scale", value=3, minimum=1, maximum=10, step=0.5)
-        n_samples = gr.Slider(label="Num samples", value=2, minimum=1, maximum=2, step=1)
+        n_samples = gr.Slider(label="Num samples", value=1, minimum=1, maximum=1, step=1)
         seed = gr.Slider(label="Seed", value=0, minimum=0, maximum=10000, step=1)
-        steps = gr.Slider(label="Steps", value=30, minimum=10, maximum=100, step=5)
+        steps = gr.Slider(label="Steps", value=100, minimum=10, maximum=100, step=5)
 
     with gr.Row():
         submit = gr.Button("Generate")
@@ -244,4 +246,4 @@ The model was trained on a subset of LAION Improved Aesthetics at a resolution o
 # demo.launch()
 
 # With rayserve
-app = GradioServer.options(num_replicas=torch.cuda.device_count(), ray_actor_options={"num_gpus" : 1.0}).bind(demo)
+app = GradioServer.options(num_replicas=3, ray_actor_options={"num_gpus" : 1.0, "num_cpus": 16.0}).bind(demo)
