@@ -140,6 +140,8 @@ with gr.Blocks(title="Image Mixer", css=".gr-box {border-color: #8136e2}") as de
 
 _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](https://lambdalabs.com/)_
 
+### Running on [Lambda Cloud A10 GPU Instances](https://lambdalabs.com/service/gpu-cloud)
+
 ### __Provide one or more images to be mixed together by a fine-tuned Stable Diffusion model (see tips and advice below👇).__
 
 ![banner-large.jpeg](https://s3.amazonaws.com/moonup/production/uploads/1674039767068-62bd5f951e22ec84279820e8.jpeg)
