@@ -179,9 +179,9 @@ _Created by [Justin Pinkney](https://www.justinpinkney.com) at [Lambda Labs](htt
                     strengths.append(strength)
     with gr.Row():
         cfg_scale = gr.Slider(label="CFG scale", value=3, minimum=1, maximum=10, step=0.5)
-        n_samples = gr.Slider(label="Num samples", value=1, minimum=1, maximum=1, step=1)
+        n_samples = gr.Slider(label="Num samples", value=1, minimum=1, maximum=2, step=1)
         seed = gr.Slider(label="Seed", value=0, minimum=0, maximum=10000, step=1)
-        steps = gr.Slider(label="Steps", value=100, minimum=10, maximum=100, step=5)
+        steps = gr.Slider(label="Steps", value=30, minimum=10, maximum=100, step=5)
 
     with gr.Row():
         submit = gr.Button("Generate")
