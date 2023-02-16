@@ -247,5 +247,6 @@ The model was trained on a subset of LAION Improved Aesthetics at a resolution o
 # demo.launch()
 
 # With rayserve
+demo.queue(concurrency_count=1)
 num_replicas = os.getenv("DEMO_NUM_REPLICAS") if "DEMO_NUM_REPLICAS" in os.environ else torch.cuda.device_count()
 app = GradioServer.options(num_replicas=num_replicas, ray_actor_options={"num_gpus" : 1.0, "num_cpus": 16.0}).bind(demo)
