@@ -224,7 +224,7 @@ with gr.Blocks(title="Image Mixer", css=".gr-box {border-color: #8136e2}") as de
 
 # without rayserve
 demo.queue(concurrency_count=1, max_size=4)
-demo.launch(server_port=8266)
+demo.launch(server_port=8266, share=True)
 
 # With rayserve
 # demo.queue(concurrency_count=1)
