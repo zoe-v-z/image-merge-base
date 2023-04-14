@@ -191,36 +191,6 @@ with gr.Blocks(title="Image Mixer", css=".gr-box {border-color: #8136e2}") as de
     inps.extend([cfg_scale, n_samples, seed, steps, ])
     submit.click(fn=run, inputs=inps, outputs=[output])
 
-    ex = gr.Examples([
-        [
-            "Image", "Image", "Text/URL", "Nothing", "Nothing",
-            "", "", "central symmetric figure detailed artwork", "", "",
-            "gainsborough.jpeg", "blonder.jpeg", "blonder.jpeg", "blonder.jpeg", "blonder.jpeg",
-            1, 1.35, 1.4, 1, 1,
-            3.0, 1, 0, 30,
-        ],
-        [
-            "Image", "Image", "Text/URL", "Image", "Nothing",
-            "", "", "flowers", "", "",
-            "ex2-1.jpeg", "ex2-2.jpeg", "blonder.jpeg", "ex2-3.jpeg", "blonder.jpeg",
-            1, 1, 1.5, 1.25, 1,
-            3.0, 1, 0, 30,
-        ],
-        [
-            "Image", "Image", "Image", "Nothing", "Nothing",
-            "", "", "", "", "",
-            "ex1-1.jpeg", "ex1-2.jpeg", "ex1-3.jpeg", "blonder.jpeg", "blonder.jpeg",
-            1.1, 1, 1.4, 1, 1,
-            3.0, 1, 0, 30,
-        ],
-    ],
-        fn=run, inputs=inps, outputs=[output], cache_examples=False)
-
-    gr.Markdown(
-        """
-
-
-        """)
 
 # without rayserve
 demo.queue(concurrency_count=1, max_size=4)
