@@ -22,7 +22,7 @@ datasets[vision]==2.4.0
 -e git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers
 -e git+https://github.com/openai/CLIP.git@main#egg=clip
 -e git+https://github.com/justinpinkney/stable-diffusion.git@8789746c05cf8ed4755ddb6aa33abdfdaa6908fa#egg=latent-diffusion
-gradio==3.5
+gradio==3.40
 ray[serve]==2.2.0
 fastapi==0.88.0
 httpx==0.23.1
